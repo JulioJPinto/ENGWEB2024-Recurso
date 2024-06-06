@@ -2,8 +2,8 @@ var express = require("express");
 var router = express.Router();
 var axios = require("axios");
 
-//const api_url = "http://engweb2024-recurso-ex1-1:17000";
-const api_url = "http://localhost:17000";
+const api_url = "http://engweb2024-recurso-ex1-1:17000";
+
 
 router.get("/", function(req, res, next) {
   axios.get(api_url + "/books")
