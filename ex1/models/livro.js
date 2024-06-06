@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 const livroSchema = new mongoose.Schema({
     title: { type: String, required: true },
     series: String,
-    author: { type: String, required: true },
+    author: [String],
     rating: { type: String, required: true },
     description: { type: String, required: true },
     language: { type: String, required: true },

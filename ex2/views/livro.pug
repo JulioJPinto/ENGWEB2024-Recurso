@@ -1,0 +1,80 @@
+extends layout
+
+block content
+  a(href="/") Voltar
+  .w3-card-4
+    header.w3-pink
+      h2.w3-center #{livro.title}
+  
+  .w3-container
+    //- Table 1: Basic Information
+    table.w3-table-all
+      thead
+        tr
+          th
+        tr
+          th id
+          th title
+          th series
+          th author
+          th rating
+          th description
+          th language
+          th isbn
+          th genres
+          th characters
+          th bookFormat
+          th edition
+          th pages
+
+      tbody
+        tr
+          td= livro._id
+          td= livro.title
+          td= livro.series
+          td= livro.author.join(", ")
+          td= livro.rating
+          td= livro.description
+          td= livro.language
+          td= livro.isbn
+          td= livro.genres.join(", ")
+          td= livro.characters.join(", ")
+          td= livro.bookFormat
+          td= livro.edition
+          td= livro.pages
+
+  .w3-container
+    //- Table 2: Additional Information
+    table.w3-table-all
+      thead
+        tr
+          th Addiction
+        tr
+          th publisher
+          th publishDate
+          th firstPublishDate
+          th awards
+          th numRatings
+          th ratingsByStars
+          th likedPercent
+          th setting
+          th coverImg
+          th bbeScore
+          th bbeVotes
+          th price
+
+      tbody
+        tr
+          td= livro.publisher
+          td= livro.publishDate
+          td= livro.firstPublishDate
+          td= livro.awards.join(", ")
+          td= livro.numRatings
+          td= livro.ratingsByStars.join(", ")
+          td= livro.likedPercent
+          td= livro.setting.join(", ")
+          td
+            img(src=livro.coverImg, alt=livro.title)
+          td= livro.bbeScore
+          td= livro.bbeVotes
+          td= livro.price
