@@ -25,4 +25,15 @@ router.get("/:id", function(req, res, next) {
     });
 });
 
+router.get('/authors/:idAutor', function (req, res) {
+  axios.get(api_url + "/books").then((response) => {
+    let author = req.params.idAutor;
+    let livros = response.data;
+    let livrosAutor = livros.filter(livro => livro.author && livro.author.includes(author));
+    res.render('autor', { author: author, livros: livrosAutor });
+  }).catch((error) => {
+    res.render('error', { error: error });
+  });
+});
+
 module.exports = router;

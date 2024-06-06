@@ -24,7 +24,7 @@ block content
               td 
                 if livro.author && Array.isArray(livro.author)
                   each author in livro.author
-                      a(href="/entidades/" + author)= author
+                      a(href="/authors/" + author)= author
                       | &nbsp;
                 else
                     | N/A
